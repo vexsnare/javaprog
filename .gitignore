@@ -1,0 +1,8 @@
+target/
+.idea/
+*.iml
+*.log
+*.jar
+.DS_Store
+*.gz
+dump.rdb
