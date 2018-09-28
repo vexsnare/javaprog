@@ -1,4 +1,4 @@
-package cj;
+package samples;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -6,54 +6,68 @@ import java.util.StringTokenizer;
 /**
  * Created by vinaysaini on 5/7/16.
  */
-class codeJam1cB {
+class codeJam1cA {
 
     public static void main(String[] args) {
         PrintWriter out = null;
         try {
-            out = new PrintWriter("/Users/vinaysaini/bitbucket/javaprog/src/output_b_large.txt");
+            out = new PrintWriter("/Users/vinaysaini/bitbucket/javaprog/src/output_large.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         int T = in.nextInt();
         for (int t = 0; t < T; t++) {
-            int B = in.nextInt();
-            long M = in.nextLong();
-            if(M > (long)Math.pow(2, B-2)) {
-                out.println("Case #"+(t+1)+": "+"IMPOSSIBLE");
-            } else {
-                out.println("Case #"+(t+1)+": "+"POSSIBLE");
-                int ar[][] = new int[B][B];
-                solve(B, M, ar);
-                for (int i = 0; i < B; i++) {
-                    for (int j = 0; j < B; j++) {
-                        out.print(ar[i][j]);
-                    }
-                    out.println();
-                }
+            int n = in.nextInt();
+            int[] ar = new int[n];
+            for (int i = 0; i < n; i++) {
+                ar[i] = in.nextInt();
             }
+            StringBuilder ans = new StringBuilder();
+            while (getCount(ar) > 0) {
+                int total = getCount(ar);
+                int people = 2;
+                if (total % 2 != 0) people = 1;
+                int majority = (total - people) / 2;
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < n && people > 0; i++) {
+                    while (ar[i] > majority) {
+                        people--;
+                        ar[i]--;
+                        sb.append((char)(i + 'A'));
+                    }
+                }
+                if (people > 0) {
+                    for (int i = 0; i < n&& people > 0; i++) {
+                        if (ar[i] > 0) {
+                            ar[i]--;
+                            sb.append((char)(i + 'A'));
+                            people--;
+                        }
+                    }
+                }
+                if (people > 0) {
+                    for (int i = 0; i < n && people > 0; i++) {
+                        if (ar[i] > 0) {
+                            ar[i]--;
+                            sb.append((char)(i + 'A'));
+                            people--;
+                        }
+                    }
+                }
+                ans.append(sb);
+                ans.append(" ");
+            }
+            out.println("Case #"+(t+1)+": "+ans.toString().trim());
+
         }
         out.close();
     }
-
-    static void solve(int B, long M, int ar[][]) {
-
-        long b = M;
-        int pos = 0;
-        while(b > 0) {
-            if((b & 1) > 0) {
-                if(pos+1 != B-1) ar[pos+1][B-1] = 1;
-            }
-            b = b >> 1;
-            pos++;
+    static int getCount(int [] ar) {
+        int total = 0;
+        for (int i = 0; i < ar.length; i++) {
+            total += ar[i];
         }
-        pos--;
-        if(pos+1 != B-1) ar[pos+1][B-1] = 1;
-        for (int i = 0; i < pos+2; i++) {
-            for (int j = i+1; j < pos+2; j++) {
-                ar[i][j] = 1;
-            }
-        }
+        return total;
     }
 
 
@@ -67,7 +81,7 @@ class codeJam1cB {
         public FastScanner() {
            // br = new BufferedReader(new InputStreamReader(System.in));
             try {
-                br = new BufferedReader(new FileReader("/Users/vinaysaini/bitbucket/javaprog/src/B-large_1.in"));
+                br = new BufferedReader(new FileReader("/Users/vinaysaini/bitbucket/javaprog/src/A-large.in"));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
