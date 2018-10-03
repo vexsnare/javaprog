@@ -10,10 +10,12 @@ public class HeapSort {
     private void sort(int[] ar) {
         int n = ar.length;
 
-        for (int i = n-1; i >= 0; i--) {
+        // re-arrange
+        for (int i = n/2-1; i >= 0; i--) {
             heapify(ar, i, n-1);
         }
 
+        // pick and move to right
         for (int i = n-1; i >= 0; i--) {
             heapify(ar, 0, i);
             swap(ar, 0, i);
