@@ -5,10 +5,10 @@ import utils.PrintHelper;
 
 public class BubbleSort {
     private void sort(int ar[]) {
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = i+1; j < ar.length; j++) {
-                if (ar[i] > ar[j])
-                    ArrayHelper.swap(ar, i, j);
+        for (int i = ar.length; i > 0; i--) {
+            for (int j = 1; j < i; j++) {
+                if (ar[j] < ar[j-1])
+                    ArrayHelper.swap(ar, j-1, j);
             }
         }
     }
