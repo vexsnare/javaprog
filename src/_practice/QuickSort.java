@@ -3,40 +3,37 @@ package _practice;
 import utils.PrintHelper;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class QuickSort {
 
-    void sort(ArrayList<Integer> arrayList, int li, int ri) {
+    private void sort(List<Integer> list, int li, int ri) {
         if(ri <= li) return;
-        int pivot = arrayList.get(ri);
+        int pivot = list.get(ri);
         int k = li-1;
         for (int i = li; i < ri; i++) {
-            if(arrayList.get(i) < pivot) {
-                swap(arrayList, i, k+1);
+            if(list.get(i) < pivot) {
+                swap(list, i, k+1);
                 k++;
             }
         }
-        swap(arrayList, k+1, ri);
-        sort(arrayList, li, k);
-        sort(arrayList, k+2, ri);
+        swap(list, k+1, ri);
+        sort(list, li, k);
+        sort(list, k+2, ri);
     }
-    void swap(ArrayList<Integer> arrayList, int i1, int i2) {
-        Integer temp = arrayList.get(i1);
-        arrayList.set(i1, arrayList.get(i2));
-        arrayList.set(i2, temp);
+    private void swap(List<Integer> list, int i1, int i2) {
+        Integer temp = list.get(i1);
+        list.set(i1, list.get(i2));
+        list.set(i2, temp);
     }
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int n = scanner.nextInt();
-        for (int i = 0; i < n; i++) {
-            arrayList.add(scanner.nextInt());
-        }
+        int[] ar = {1,2,3,4,5};
+        List<Integer> list = Arrays.stream(ar).boxed().collect(Collectors.toCollection(ArrayList::new));
         QuickSort quickSort = new QuickSort();
-        quickSort.sort(arrayList, 0, arrayList.size()-1);
-        PrintHelper.printArrayList(arrayList);
+        quickSort.sort(list, 0, list.size()-1);
+        PrintHelper.printList(list);
     }
-
 }
