@@ -11,7 +11,7 @@ class Singleton {
         if(instance == null) instance = new Singleton();
         return instance;
     }
-    public void print() {
-        System.out.println("count = " + count++);
+    public int getCount() {
+        return count++;
     }
 }
