@@ -1,4 +1,4 @@
-package _practice;
+package algo.sorting;
 
 import utils.PrintHelper;
 
