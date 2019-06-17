@@ -1,33 +1,75 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Solution {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println(fraction(-1, 20398077));
+    static int m, n;
+    static int matched = 0;
+    static Set<String> words;
+    static int[] dx = {0, 1, 0, -1, 1, -1, 1, -1};
+    static int[] dy = {1, 0, -1, 0, -1, 1, 1, -1};
+    static boolean[][] visited = new boolean[11][11];
+    static String[][] mat = new String[11][11];
+
+    static boolean inRange(int i, int j) {
+        return i >= 0 && i < m && j >= 0 && j < n;
     }
-    public static String fraction(int n, int d) {
-        boolean neg = n < 0 && d > 0 || n > 0 && d < 0;
-        long neum = n;
-        long denom = d;
-        neum = Math.abs(neum);
-        denom = Math.abs(denom);
-        StringBuilder ans = new StringBuilder();
-        StringBuilder temp = new StringBuilder();
-        ans.append(Long.toString(neum/denom));
-        long rem = neum % denom;
-        if(rem == 0) return ans.toString();
-        Map<Long, Integer> map = new HashMap<>();
-        ans.append(".");
-        while (rem > 0) {
-            if(map.containsKey(rem)) {
-                int idx = map.get(rem);
-                return ans.append(temp.substring(0, idx)).append('(').append(temp.substring(idx)).append(')').toString();
+
+    static void init(){
+        for(int i = 0; i < 11; i++) {
+            for(int j = 0; j < 11; j++) {
+                visited[i][j] = false;
             }
-            map.put(rem, temp.length());
-            rem *= 10;
-            temp.append(Long.toString(rem/denom));
-            rem = rem % denom;
         }
-        return (neg ? "-" : "") + ans.toString() + temp.toString();
+    }
+    static void dfs(int i, int j, String s) {
+        if(words.contains(s)) {
+            System.out.println("s = " + s);
+            matched++;
+        }
+        for(int k = 0; k < 8; k++) {
+            int nextI = i + dx[k];
+            int nextj = j + dy[k];
+            if(inRange(nextI, nextj) && visited[nextI][nextj] == false) {
+                visited[nextI][nextj] = true;
+                dfs(nextI, nextj, s + mat[nextI][nextj]);
+                visited[nextI][nextj] = false;
+            }
+        }
+    }
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        init();
+        int z;
+        z = sc.nextInt();
+        sc.nextLine();
+        words = new HashSet<>();
+        String wordsLine = sc.nextLine();
+        String[] splitWords = wordsLine.split(" ");
+        for (int i = 0; i < splitWords.length; i++) {
+            words.add(splitWords[i]);
+        }
+        m = sc.nextInt();
+        n = sc.nextInt();
+        sc.nextLine();
+        String[] chars = sc.nextLine().split(" ");
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                //System.out.println("x = " + chars[i * n + j]);
+                mat[i][j] = chars[i*n + j];
+            }
+        }
+        int ans = 0;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                matched = 0;
+                dfs(i, j, "" + mat[i][j]);
+                ans += matched;
+            }
+        }
+        System.out.println(ans);
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     }
 }
+
