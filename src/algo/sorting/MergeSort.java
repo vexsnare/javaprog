@@ -46,7 +46,6 @@ public class MergeSort {
         int ar[] = {12, 2, 3, 2, 1, 0, -12, 12, 4334, 1};
         MergeSort mergeSort = new MergeSort();
         mergeSort.sort(ar, 0, ar.length - 1);
-        PrintHelper.printArray(ar);
     }
     
 }

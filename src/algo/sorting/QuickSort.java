@@ -34,6 +34,6 @@ public class QuickSort {
         List<Integer> list = Arrays.stream(ar).boxed().collect(Collectors.toCollection(ArrayList::new));
         QuickSort quickSort = new QuickSort();
         quickSort.sort(list, 0, list.size()-1);
-        PrintHelper.printList(list);
+        new PrintHelper<Integer>().printList(list, ",");
     }
 }
