@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * https://www.interviewbit.com/problems/max-sum-contiguous-subarray/
+ */
 public class MaxSumSubArray {
 
     private int findSum(final List<Integer> input) {
@@ -26,3 +29,4 @@ public class MaxSumSubArray {
         System.out.println(maxSumSubArray.findSum(input2));
     }
 }
+                                    

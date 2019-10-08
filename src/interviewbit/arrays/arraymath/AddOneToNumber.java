@@ -15,6 +15,7 @@ public class AddOneToNumber {
         ArrayList<Integer> result = new ArrayList<>();
         int k = 0;
         while (input.get(k) == 0 && k < input.size() - 1) k++;
+
         for (int i = input.size()-1; i >= k ; i--) {
             result.add(input.get(i));
         }
