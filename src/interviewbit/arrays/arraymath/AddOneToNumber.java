@@ -1,6 +1,6 @@
 package interviewbit.arrays.arraymath;
 
-import utils.PrintHelper;
+import helpers.PrintHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;

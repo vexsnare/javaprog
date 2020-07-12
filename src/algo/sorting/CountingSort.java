@@ -1,6 +1,6 @@
 package algo.sorting;
 
-import utils.PrintHelper;
+import helpers.PrintHelper;
 
 public class CountingSort {
     /**

@@ -1,7 +1,7 @@
 package algo.sorting;
 
-import utils.ArrayHelper;
-import utils.PrintHelper;
+import helpers.ArrayHelper;
+import helpers.PrintHelper;
 
 public class BubbleSort {
     private void sort(int ar[]) {

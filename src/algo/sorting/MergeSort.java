@@ -1,7 +1,5 @@
 package algo.sorting;
 
-import utils.PrintHelper;
-
 public class MergeSort {
     /**
      *
