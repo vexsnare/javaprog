@@ -3,9 +3,9 @@ import java.util.Scanner;
 /**
  * Created by vinaysaini on 10/10/16.
  */
-class SegmentTree {
+class SegmentTree1 {
     int[] st;
-    SegmentTree(int[] ar) {
+    SegmentTree1(int[] ar) {
         int n = ar.length;
         int height = (int) Math.ceil(Math.log(n)/Math.log(2));
         int size = (int) Math.pow(2, height+1) - 1;
@@ -61,7 +61,7 @@ class SegmentTree {
             ar[i] = in.nextInt();
         }
        // int [] ar = {1,2,3,4,5};
-        SegmentTree st = new SegmentTree(ar);
+        SegmentTree1 st = new SegmentTree1(ar);
         for (int i = 0; i < st.st.length; i++) {
             System.out.print(st.st[i] + " ");
         }
