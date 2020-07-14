@@ -12,7 +12,7 @@ public class TreeNode<T> {
     T value;
     TreeNode left;
     TreeNode right;
-    public TreeNode(T value) {
+    TreeNode(T value) {
         this.value = value;
         left = null;
         right = null;
