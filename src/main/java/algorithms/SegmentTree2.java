@@ -10,12 +10,13 @@ import java.util.List;
  * @created 13/07/2020 - 3:32 PM
  */
 
-public class SegmentTree {
+// Uses pointer tree node
+public class SegmentTree2 {
     private TreeNode<Integer> root;
     private List<Integer> values;
 
 
-    SegmentTree(List<Integer> values) {
+    SegmentTree2(List<Integer> values) {
         this.values = values;
         root = construct(new Range(0, values.size() - 1));
     }

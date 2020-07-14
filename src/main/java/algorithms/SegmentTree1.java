@@ -1,8 +1,12 @@
+package algorithms;
+
 import java.util.Scanner;
 
 /**
  * Created by vinaysaini on 10/10/16.
  */
+
+// Use heap style array
 class SegmentTree1 {
     int[] st;
     SegmentTree1(int[] ar) {
