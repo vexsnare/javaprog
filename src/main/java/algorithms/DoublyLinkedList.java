@@ -23,22 +23,23 @@ public class DoublyLinkedList<T> {
         if(size == 1) {
             this.head = node;
             this.tail = node;
-            return true;
-        }
-        if(tail == node) {
-            this.tail = node.prev;
-            node.prev.next = null;
-        } else if(head == node) {
-            this.head = node.next;
-            node.next.prev = null;
         } else {
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
+            if (tail == node) {
+                this.tail = node.prev;
+                node.prev.next = null;
+            } else if (head == node) {
+                this.head = node.next;
+                node.next.prev = null;
+            } else {
+                node.prev.next = node.next;
+                node.next.prev = node.prev;
+            }
         }
         size--;
         return true;
     }
     public DLLNode<T> addFront(DLLNode<T> node) {
+        size++;
         if(head == null) {
             this.head = node;
             this.tail = node;

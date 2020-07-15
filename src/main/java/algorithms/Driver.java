@@ -32,13 +32,24 @@ public class Driver {
 //        BinaryTree bt = new BinaryTree(preOrder, inOrder);
 //        bt.traverseInInOrder(bt.root);
 
-        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
-        doublyLinkedList.addFrontByValue(1);
-        DLLNode<Integer> ref = doublyLinkedList.addFrontByValue(2);
-        doublyLinkedList.addFront(new DLLNode<>(3));
-        doublyLinkedList.display();
-        doublyLinkedList.remove(ref);
-        doublyLinkedList.display();
+//        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
+//        doublyLinkedList.addFrontByValue(1);
+//        DLLNode<Integer> ref = doublyLinkedList.addFrontByValue(2);
+//        doublyLinkedList.addFront(new DLLNode<>(3));
+//        doublyLinkedList.display();
+//        doublyLinkedList.display();
+//        doublyLinkedList.remove(ref);
+
+        LRUCache lruCache = new LRUCache(3);
+        lruCache.set(2,5);
+        lruCache.set(2,4);
+        lruCache.set(2, 1);
+        System.out.println(lruCache.get(2));
+        lruCache.set(3, 5);
+        System.out.println(lruCache.get(2));
+        System.out.println(lruCache.get(3));
+        lruCache.set(5,10);
+        System.out.println(lruCache.get(1));
 
     }
 
