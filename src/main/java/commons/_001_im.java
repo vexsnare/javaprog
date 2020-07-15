@@ -1,4 +1,4 @@
-package algo;
+package commons;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,16 +9,19 @@ import java.util.StringTokenizer;
  * Created by vinaysaini on 6/7/16.
  */
 public class _001_im {
-    public static void main(String[] args) {
 
-            String s = Integer.toString(1213);
-            System.out.println(s.charAt(0) > s.charAt(1));
+    /**
+     * 4 direction
+     */
+    int[] d4x = {0, -1, 0, 1};
+    int[] d4y = {1, 0, -1, 0};
 
+    /**
+     * 8 Directions
+     */
 
-    }
-
-    int[] dx = {0, -1, 0, 1};
-    int[] dy = {1, 0, -1, 0};
+    int[] d8x = {0, 0, 0, 1, 1, 1, -1, -1, -1};
+    int[] d8y = {0, 1, -1, 0, 1, -1, 0, 1, -1};
     /**
      *  (x^(-1))%mod = x^(mod-2)%mod
      *  Where mod is a Prime (commonly given as 1e7+9)
@@ -26,6 +29,10 @@ public class _001_im {
     static long inverseEuler(int n, int mod) {
         return pow(n, mod-2, mod);
     }
+
+    /**
+     * Calculate power exponentially
+     */
     static long pow(int a,int b, int mod) {
         if (b == 0) return 1;
         else {
@@ -37,43 +44,21 @@ public class _001_im {
             return x;
         }
     }
+
+    /**
+     * Calculate FCD for given two numbers
+     */
     static long gcd(long x, long y) {
         if(x == 0) return y;
         return gcd(y%x, x);
     }
+
+    /**
+     * Log base 2 value
+     */
     static int log2floor(int x) {
         return 31 - Integer.numberOfLeadingZeros(x);
     }
-
-    static class Pair {
-        int x;
-        int y;
-        Pair(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-    static ArrayList<Integer> generatePrimes(int max) {
-        boolean[] ar = new boolean[max];
-        Arrays.fill(ar, true);
-        ar[0] = ar[1] = false;
-        for(int i = 0; i <= Math.sqrt(max); i++) {
-            if(ar[i] == true) {
-                for (int j = i * i; j < max; j += i) {
-                    ar[j] = false;
-                }
-            }
-        }
-        ArrayList<Integer> primes = new ArrayList<Integer>();
-        for (int i = 0; i < max; i++) {
-            if(ar[i]) primes.add(i);
-        }
-        return primes;
-    }
-
-
-
-
 
     /**
      * ################### Fast I/O

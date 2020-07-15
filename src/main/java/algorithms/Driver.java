@@ -1,7 +1,6 @@
 package algorithms;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author vinay.saini
@@ -52,11 +51,22 @@ public class Driver {
 //        lruCache.set(5,10);
 //        System.out.println(lruCache.get(1));
 
-        List<Integer> input = Arrays.asList(4,3,2,15,8,19,21,4,90);
-        LinkedList linkedList = new LinkedList(input);
-        linkedList.display();
-        linkedList.reverseList(linkedList.head);
-        linkedList.display();
+//        List<Integer> input = Arrays.asList(4,3,2,15,8,19,21,4,90);
+//        LinkedList linkedList = new LinkedList(input);
+//        linkedList.display();
+//        linkedList.reverseList(linkedList.head);
+//        linkedList.display();
+
+//        CircularQueue circularQueue = new CircularQueue(3);
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            int typeOfopr = scanner.nextInt();
+//            if(typeOfopr == 1) {
+//                circularQueue.push(scanner.nextInt());
+//            } else {
+//                System.out.println(circularQueue.pop());
+//            }
+//        }
 
 
     }

@@ -1,13 +1,19 @@
-package algo;
+package algorithms;
 
 import java.util.Scanner;
 
 public class CircularQueue {
-    int size = 3;
-    int[] ar = new int[size];
-    boolean full = false;
+    int size;
+    int[] ar;
+    boolean full;
     int i = 0;
     int j = 0;
+
+    CircularQueue(int size) {
+        this.size = size;
+        this.full = false;
+        ar = new int[size];
+    }
     public int pop() {
         if(!full && i == j) {
             System.out.println("Empty");
@@ -32,16 +38,4 @@ public class CircularQueue {
         }
     }
 
-    public static void main(String[] args) {
-        CircularQueue circularQueue = new CircularQueue();
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            int typeOfopr = scanner.nextInt();
-            if(typeOfopr == 1) {
-                circularQueue.push(scanner.nextInt());
-            } else {
-                System.out.println(circularQueue.pop());
-            }
-        }
-    }
 }

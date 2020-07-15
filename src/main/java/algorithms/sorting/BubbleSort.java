@@ -1,4 +1,4 @@
-package algo.sorting;
+package algorithms.sorting;
 
 import helpers.ArrayHelper;
 import helpers.PrintHelper;
