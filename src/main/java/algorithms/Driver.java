@@ -1,6 +1,7 @@
 package algorithms;
 
-import commons.DLLNode;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author vinay.saini
@@ -40,16 +41,23 @@ public class Driver {
 //        doublyLinkedList.display();
 //        doublyLinkedList.remove(ref);
 
-        LRUCache lruCache = new LRUCache(3);
-        lruCache.set(2,5);
-        lruCache.set(2,4);
-        lruCache.set(2, 1);
-        System.out.println(lruCache.get(2));
-        lruCache.set(3, 5);
-        System.out.println(lruCache.get(2));
-        System.out.println(lruCache.get(3));
-        lruCache.set(5,10);
-        System.out.println(lruCache.get(1));
+//        LRUCache lruCache = new LRUCache(3);
+//        lruCache.set(2,5);
+//        lruCache.set(2,4);
+//        lruCache.set(2, 1);
+//        System.out.println(lruCache.get(2));
+//        lruCache.set(3, 5);
+//        System.out.println(lruCache.get(2));
+//        System.out.println(lruCache.get(3));
+//        lruCache.set(5,10);
+//        System.out.println(lruCache.get(1));
+
+        List<Integer> input = Arrays.asList(4,3,2,15,8,19,21,4,90);
+        LinkedList linkedList = new LinkedList(input);
+        linkedList.display();
+        linkedList.reverseList(linkedList.head);
+        linkedList.display();
+
 
     }
 
