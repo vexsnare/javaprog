@@ -1,5 +1,7 @@
 package algorithms;
 
+import algo.PrintAllPermutation;
+
 import java.util.Scanner;
 
 /**
@@ -67,6 +69,11 @@ public class Driver {
 //                System.out.println(circularQueue.pop());
 //            }
 //        }
+
+        PrintAllPermutation printAllPermutation = new PrintAllPermutation();
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        printAllPermutation.permute(new StringBuilder(s), 0);
 
 
     }
