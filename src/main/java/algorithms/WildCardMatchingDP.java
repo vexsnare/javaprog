@@ -1,4 +1,4 @@
-package algo;
+package algorithms;
 
 /**
  * Created by vinaysaini on 5/31/16.

@@ -1,4 +1,4 @@
-package algo;
+package gfg;
 
 import java.util.Scanner;
 import java.util.Stack;

@@ -1,6 +1,6 @@
 package interviewbit.arrays.simulationarray;
 
-import helpers.PrintHelper;
+import helpers.Printer;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class PascalTriangle {
     public static void main(String[] args) {
         PascalTriangle pascalTriangle= new PascalTriangle();
         ArrayList<ArrayList<Integer>> ans = pascalTriangle.solve(5);
-        PrintHelper<Integer> printHelper = new PrintHelper<>();
+        Printer<Integer> printHelper = new Printer<>();
         for (ArrayList<Integer> ar: ans) {
             printHelper.printList(ar, ",");
         }

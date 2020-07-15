@@ -3,7 +3,7 @@ package helpers;
 
 import java.util.List;
 
-public class PrintHelper <T>{
+public class Printer<T>{
 
     public void printList(List<T> list, String delim) {
         for (T item: list) {

@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import helpers.PrintHelper;
+import helpers.Printer;
 
 public class HeapSort {
     /**
@@ -53,6 +53,6 @@ public class HeapSort {
         int ar[] = {1, 2, 3};
         HeapSort heapSort = new HeapSort();
         heapSort.sort(ar);
-        PrintHelper.printArray(ar);
+        Printer.printArray(ar);
     }
 }

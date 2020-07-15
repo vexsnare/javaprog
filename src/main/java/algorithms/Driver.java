@@ -1,7 +1,5 @@
 package algorithms;
 
-import algo.PrintAllPermutation;
-
 import java.util.Scanner;
 
 /**
@@ -70,10 +68,10 @@ public class Driver {
 //            }
 //        }
 
-        PrintAllPermutation printAllPermutation = new PrintAllPermutation();
-        Scanner in = new Scanner(System.in);
-        String s = in.nextLine();
-        printAllPermutation.permute(new StringBuilder(s), 0);
+//        PrintAllPermutation printAllPermutation = new PrintAllPermutation();
+//        Scanner in = new Scanner(System.in);
+//        String s = in.nextLine();
+//        printAllPermutation.permute(new StringBuilder(s), 0);
 
 
     }

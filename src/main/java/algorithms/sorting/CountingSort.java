@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import helpers.PrintHelper;
+import helpers.Printer;
 
 public class CountingSort {
     /**
@@ -31,7 +31,7 @@ public class CountingSort {
         int[] ar = {2,3,4, 1, 11, 10, 1};
         CountingSort countingSort = new CountingSort();
         countingSort.sort(ar);
-        PrintHelper.printArray(ar);
+        Printer.printArray(ar);
 
     }
 }

@@ -1,6 +1,6 @@
 package helpers;
 
-public class ArrayHelper {
+public class Aux {
 
     public static void swap(int ar[], int i, int j) {
         int temp = ar[i];

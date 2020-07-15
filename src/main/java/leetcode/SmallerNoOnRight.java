@@ -2,7 +2,22 @@ package leetcode;
 
 import java.util.*;
 
-class Solution {
+class SmallerNoOnRight {
+
+    class TreeNode {
+        int value;
+        int onleft;
+        int dup;
+        TreeNode left;
+        TreeNode right;
+        TreeNode (int v, int onLeft, int dup) {
+            this.value = v;
+            this.onleft = onLeft;
+            this.dup = 0;
+            this.left = null;
+            this.right = null;
+        }
+    }
 
     TreeNode root = null;
     int ans = 0;
@@ -16,7 +31,7 @@ class Solution {
             ar[i] = in.nextInt();
         }
      //  int[] ar  = {26,78,27,100,33,67,90,23,66,5,38,7,35,23,52,22,83,51,98,69,81,32,78,28,94,13,2,97,3,76,99,51,9,21,84,66,65,36,100,41};
-        Solution sol = new Solution();
+        SmallerNoOnRight sol = new SmallerNoOnRight();
         sol.countSmaller(ar);
     }
     public List<Integer> countSmaller(int[] nums) {
@@ -47,20 +62,5 @@ class Solution {
             }
         }
         return cur;
-    }
-}
-
-class TreeNode {
-    int value;
-    int onleft;
-    int dup;
-    TreeNode left;
-    TreeNode right;
-    TreeNode (int v, int onLeft, int dup) {
-        this.value = v;
-        this.onleft = onLeft;
-        this.dup = 0;
-        this.left = null;
-        this.right = null;
     }
 }

@@ -1,6 +1,6 @@
 package interviewbit.arrays.arraymath;
 
-import helpers.PrintHelper;
+import helpers.Printer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +50,7 @@ public class AddOneToNumber {
         input.add(9);
         AddOneToNumber addOneToNumber = new AddOneToNumber();
         List<Integer> result = addOneToNumber.plusOne(input);
-        new PrintHelper<Integer>().printList(result, ",");
+        new Printer<Integer>().printList(result, ",");
 
     }
 
