@@ -1,5 +1,7 @@
 package algorithms;
 
+import commons.DLLNode;
+
 /**
  * @author vinay.saini
  * @created 13/07/2020 - 10:41 AM
@@ -13,7 +15,7 @@ public class Driver {
 
 //        SegmentTree2 segmentTree = new SegmentTree2(Arrays.asList(2,3,4,6,10));
 //        System.out.println(segmentTree.getSum(new Range(2,4)));
-//        segmentTree.update(0, 10);
+//        segmentTree.update(0, 10);R
 //        segmentTree.update(1, 20);
 //        System.out.println(segmentTree.getSum(new Range(0,4)));
 //        System.out.println(segmentTree.getSum(new Range(1,1)));
@@ -25,12 +27,18 @@ public class Driver {
 //        binaryIndexedTree.update(5, -3);
 //        System.out.println(binaryIndexedTree.findSum(2, 5));
 
-        int[] preOrder = {30, 20, 10, 12, 40, 37, 45};
-        int[] inOrder = {10, 12, 20, 30, 37, 40, 45};
-        BinaryTree bt = new BinaryTree(preOrder, inOrder);
-        bt.traverseInInOrder(bt.root);
+//        int[] preOrder = {30, 20, 10, 12, 40, 37, 45};
+//        int[] inOrder = {10, 12, 20, 30, 37, 40, 45};
+//        BinaryTree bt = new BinaryTree(preOrder, inOrder);
+//        bt.traverseInInOrder(bt.root);
 
-        LcaBinaryTree lcaBinaryTree = new LcaBinaryTree();
+        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
+        doublyLinkedList.addFrontByValue(1);
+        DLLNode<Integer> ref = doublyLinkedList.addFrontByValue(2);
+        doublyLinkedList.addFront(new DLLNode<>(3));
+        doublyLinkedList.display();
+        doublyLinkedList.remove(ref);
+        doublyLinkedList.display();
 
     }
 

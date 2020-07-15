@@ -17,11 +17,6 @@ public class TransformString {
         Scanner in = new Scanner(System.in);
         String s1 = in.nextLine();
         String s2 = in.nextLine();
-//        int n = in.nextInt();
-//        for (int i = 0; i < n; i++) {
-//            String s = in.nextLine();
-//            dict.add(s);
-//        }
         int ans = solve(s1, s2);
         System.out.println(ans);
     }
