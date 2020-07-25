@@ -1,25 +1,39 @@
+package leetcode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-class Solution {
+/**
+ * @author vinay.saini
+ * @created 25/07/2020 - 6:06 PM
+ */
+
+/**
+ * Concept detect cycle in a directed acyclic graph
+ * Topological sort
+ */
+public class CourseScheduleII {
+
 
     int visited[];
     List<Integer>[] adj;
     Stack<Integer> stk;
     boolean cycle = false;
 
-    private void go(int cur, int mark) {
-        visited[cur] = mark;
+    private void go(int cur) {
+        visited[cur] = 1;
         for(int i = 0; i < adj[cur].size(); i++) {
             int next = adj[cur].get(i);
-            if(visited[next] == mark) {
+            if(visited[next] == 1) {
                 cycle = true;
                 return;
             }
-            if(visited[next] == -1) go(next, mark);
+            if(visited[next] == -1)
+                go(next);
         }
+        visited[cur] = 2;
         stk.push(cur);
     }
 
@@ -41,14 +55,13 @@ class Solution {
         // dfs
         for(int i = 0; i < n && !cycle; i++) {
             if(visited[i] == -1) {
-                go(i, i);
+                go(i);
             }
         }
 
-        if(cycle){
-            return new int[0];
-        }
         int[] ans = new int[n];
+        if(cycle) return new int[0];
+
         int i = 0;
         while(!stk.empty()) {
             ans[i++] = stk.pop();
@@ -56,9 +69,4 @@ class Solution {
         return ans;
     }
 
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        int[][] intput = {{0,1}};
-        sol.findOrder(2, intput);
-    }
 }

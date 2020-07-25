@@ -9,14 +9,15 @@ import lombok.Data;
 
 @Data
 public class TreeNode<T> {
-    T value;
-    TreeNode left;
-    TreeNode right;
+    public T value;
+    public TreeNode left;
+    public TreeNode right;
     public TreeNode(T value) {
         this.value = value;
         left = null;
         right = null;
     }
+
     public TreeNode(T value, TreeNode left, TreeNode right) {
         this.left = left;
         this.right = right;

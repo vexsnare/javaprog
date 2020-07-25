@@ -73,7 +73,16 @@ public class Driver {
 //        String s = in.nextLine();
 //        printAllPermutation.permute(new StringBuilder(s), 0);
 
-
+//        UnionFind unionFind = new UnionFind(10);
+//        System.out.println(unionFind.find(4));
+//        unionFind.union(3, 4);
+//        System.out.println(unionFind.find(4));
+//        unionFind.union(3, 5);
+//        unionFind.union(6, 5);
+//        unionFind.union(6, 9);
+//        unionFind.union(3, 7);
+//        System.out.println(unionFind.find(6));
+//        System.out.println(unionFind.find(9));
     }
 
 }
