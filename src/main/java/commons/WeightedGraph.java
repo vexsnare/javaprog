@@ -12,7 +12,7 @@ public class WeightedGraph {
     public int E;
     public List<Integer>[] adj;
     public int[][] weight;
-    WeightedGraph(int v, int e, int[][]mat, boolean biDirection) {
+    public WeightedGraph(int v, int e, int[][] mat, boolean biDirection) {
         this.V = v;
         this.E = e;
         this.adj = new List[V];

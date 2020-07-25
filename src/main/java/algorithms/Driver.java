@@ -1,5 +1,10 @@
 package algorithms;
 
+import commons.Graph;
+import commons.Pair;
+import commons.WeightedGraph;
+
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -83,6 +88,22 @@ public class Driver {
 //        unionFind.union(3, 7);
 //        System.out.println(unionFind.find(6));
 //        System.out.println(unionFind.find(9));
+
+        int V = 5;
+        int E = 7;
+        int[][]mat = {
+                {0, 3, 1},
+                {0, 4, 5},
+                {0, 1, 8},
+                {2, 4, 3},
+                {2, 1, 3},
+                {4, 1, 9},
+                {3, 4, 2}
+        };
+        WeightedGraph graph = new WeightedGraph(V, E, mat, false);
+        MST mst = new MST();
+        List<Pair<Integer, Integer>> edges =  mst.findMst(graph);
+        edges.stream().forEach(e -> System.out.println(e.first + " " + e.second));
     }
 
 }
