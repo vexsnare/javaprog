@@ -1,14 +1,14 @@
 package leetcode;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * https://leetcode.com/problems/intersection-of-two-arrays/
  */
-public class LeetCode349 {
+public class Intersect {
     public static void main(String[] args) {
+
         Scanner in = new Scanner(System.in);
         int[] ar1 = {1,2,2,1};
         int[] ar2 = {2,2};
@@ -23,7 +23,6 @@ public class LeetCode349 {
         for (int i = 0; i < nums1.length; i++) {
             set.add(nums1[i]);
         }
-
         for (int i = 0; i < nums2.length; i++) {
             int elem = nums2[i];
             if(set.contains(elem)) {

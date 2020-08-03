@@ -4,8 +4,8 @@ import commons.Graph;
 import commons.Pair;
 import commons.WeightedGraph;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.LinkedList;
 
 /**
  * @author vinay.saini
@@ -25,9 +25,9 @@ public class Driver {
 //        System.out.println(segmentTree.getSum(new Range(0,4)));
 //        System.out.println(segmentTree.getSum(new Range(1,1)));
 
-//        BinaryIndexedTree binaryIndexedTree = new BinaryIndexedTree(Arrays.asList(1,2,3,4,5,6));
+//        BinaryIndexedTree binaryIndexedTree = new BinaryIndexedTree(Arrays.asList(1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6));
 //        System.out.println(binaryIndexedTree.findSum(0, 3));
-//        binaryIndexedTree.update(0, 5);
+//        binaryIndexedTree.update(19, 5);
 //        System.out.println(binaryIndexedTree.findSum(0, 3));
 //        binaryIndexedTree.update(5, -3);
 //        System.out.println(binaryIndexedTree.findSum(2, 5));
@@ -88,22 +88,22 @@ public class Driver {
 //        unionFind.union(3, 7);
 //        System.out.println(unionFind.find(6));
 //        System.out.println(unionFind.find(9));
-
-        int V = 5;
-        int E = 7;
-        int[][]mat = {
-                {0, 3, 1},
-                {0, 4, 5},
-                {0, 1, 8},
-                {2, 4, 3},
-                {2, 1, 3},
-                {4, 1, 9},
-                {3, 4, 2}
-        };
-        WeightedGraph graph = new WeightedGraph(V, E, mat, false);
-        MST mst = new MST();
-        List<Pair<Integer, Integer>> edges =  mst.findMst(graph);
-        edges.stream().forEach(e -> System.out.println(e.first + " " + e.second));
+//
+//        int V = 5;
+//        int E = 7;
+//        int[][]mat = {
+//                {0, 3, 1},
+//                {0, 4, 5},
+//                {0, 1, 8},
+//                {2, 4, 3},
+//                {2, 1, 3},
+//                {4, 1, 9},
+//                {3, 4, 2}
+//        };
+//        WeightedGraph graph = new WeightedGraph(V, E, mat, false);
+//        MST mst = new MST();
+//        List<Pair<Integer, Integer>> edges =  mst.findMst(graph);
+//        edges.stream().forEach(e -> System.out.println(e.first + " " + e.second));
     }
 
 }

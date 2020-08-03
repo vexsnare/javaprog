@@ -1,9 +1,8 @@
 package commons;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by vinaysaini on 6/7/16.
@@ -61,8 +60,19 @@ public class _001_im {
     }
 
     /**
-     * ################### Fast I/O
+     * Collection array or list to int[]
      */
+    Set<Integer> list =  new HashSet<>(Arrays.asList(2,3,4));
+    int[] ar = list.stream().mapToInt(Integer::intValue).toArray();
+    Integer[] ar2 = list.toArray(new Integer[0]);
+    /**
+     *
+     * */
+     int[] ar1 = {1,2,2,1};
+     List<Integer> arrayTolist = Arrays.stream(ar1).boxed().collect(Collectors.toList());
+     /**
+     * ################### Fast I/O
+     **/
 
     public static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
     public static FastScanner in = new FastScanner();
