@@ -31,7 +31,7 @@ public class CountingSort {
         int[] ar = {2,3,4, 1, 11, 10, 1};
         CountingSort countingSort = new CountingSort();
         countingSort.sort(ar);
-        Printer.printArray(ar);
+        Printer.print(ar);
 
     }
 }

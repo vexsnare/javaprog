@@ -1,5 +1,4 @@
 package algorithms.sorting;
-
 import helpers.Printer;
 
 import java.util.ArrayList;
@@ -34,6 +33,6 @@ public class QuickSort {
         List<Integer> list = Arrays.stream(ar).boxed().collect(Collectors.toCollection(ArrayList::new));
         QuickSort quickSort = new QuickSort();
         quickSort.sort(list, 0, list.size()-1);
-        new Printer<Integer>().printList(list, ",");
+        Printer.print(list);
     }
 }

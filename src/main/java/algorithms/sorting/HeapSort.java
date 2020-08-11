@@ -53,6 +53,6 @@ public class HeapSort {
         int ar[] = {1, 2, 3};
         HeapSort heapSort = new HeapSort();
         heapSort.sort(ar);
-        Printer.printArray(ar);
+        Printer.print(ar);
     }
 }

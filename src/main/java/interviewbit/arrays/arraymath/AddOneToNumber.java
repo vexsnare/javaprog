@@ -50,7 +50,7 @@ public class AddOneToNumber {
         input.add(9);
         AddOneToNumber addOneToNumber = new AddOneToNumber();
         List<Integer> result = addOneToNumber.plusOne(input);
-        new Printer<Integer>().printList(result, ",");
+        Printer.print(result);
 
     }
 

@@ -17,6 +17,6 @@ public class BubbleSort {
         int[] ar = {1, 2, 2, 1, 3, 32, 0};
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(ar);
-        Printer.printArray(ar);
+        Printer.print(ar);
     }
 }

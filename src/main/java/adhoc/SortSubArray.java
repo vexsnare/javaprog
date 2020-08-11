@@ -18,7 +18,6 @@ public class SortSubArray {
         if(i == n-1) return 0;
         int j = n - 1;
         while (j - 1 >= 0 && nums[j - 1] <= nums[j]) j--;
-
         int k = i;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
