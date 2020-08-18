@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * https://leetcode.com/problems/remove-duplicate-letters/
  */
-public class RemoveDuplicateLetters316 {
+public class RemoveDuplicateLetters {
     public String removeDuplicateLetters(String s) {
         Stack<Character> stack = new Stack<Character>();
         int[] fr = new int[26];

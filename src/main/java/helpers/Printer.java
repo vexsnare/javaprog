@@ -27,4 +27,13 @@ public class Printer {
             System.out.println();
         }
     }
+
+    public static void print(boolean[][] ar) {
+        for (int i = 0; i < ar.length; i++) {
+            for (int j = 0; j < ar[i].length; j++) {
+                System.out.print((ar[i][j] ? "T" : "F") + " ");
+            }
+            System.out.println();
+        }
+    }
 }
