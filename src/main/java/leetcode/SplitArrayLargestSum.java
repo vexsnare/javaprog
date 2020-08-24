@@ -4,7 +4,7 @@ package leetcode;
  * https://leetcode.com/problems/split-array-largest-sum/
  */
 
-public class SplitArray410 {
+public class SplitArrayLargestSum {
     public static void main(String[] args) {
         int [] ar = {1, 2147483647};
 

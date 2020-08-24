@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+//https://leetcode.com/problems/combinations/
 
-public class CombinationsProb77 {
+public class Combinations {
     static int[] path;
     static int K;
     static int N;

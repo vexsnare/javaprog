@@ -12,8 +12,8 @@ public class _001_im {
     /**
      * 4 direction
      */
-    int[] d4x = {0, -1, 0, 1};
-    int[] d4y = {1, 0, -1, 0};
+    int[] dx = {0, -1, 0, 1};
+    int[] dy = {1, 0, -1, 0};
 
     /**
      * 8 Directions
