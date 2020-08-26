@@ -12,6 +12,12 @@ public class Printer {
         }
         System.out.println();
     }
+    public static void printStr(List<String> list) {
+        for (String item: list) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+    }
     public static void print(int[] arr) {
         for (int e: arr) {
             System.out.print(e + " ");
