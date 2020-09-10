@@ -1,6 +1,7 @@
 package commons;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,13 @@ public class _001_im {
     }
 
     /**
+     * Initialize Map of List
+     */
+    static void initialize() {
+        Map<Integer, List<Integer>> m = new HashMap<>();
+        m.computeIfAbsent(1, x -> new ArrayList<>()).add(3);
+    }
+    /**
      * Calculate power exponentially
      */
     static long pow(int a,int b, int mod) {
@@ -48,8 +56,7 @@ public class _001_im {
      * Calculate FCD for given two numbers
      */
     static long gcd(long x, long y) {
-        if(x == 0) return y;
-        return gcd(y%x, x);
+        return x == 0 ? y : gcd(y%x, x);
     }
 
     /**
@@ -70,6 +77,8 @@ public class _001_im {
      * */
      int[] ar1 = {1,2,2,1};
      List<Integer> arrayTolist = Arrays.stream(ar1).boxed().collect(Collectors.toList());
+     String[] arS = {"Abc", "bcd"};
+     List<String> stringList = Arrays.stream(arS).collect(Collectors.toList());
      /**
      * ################### Fast I/O
      **/

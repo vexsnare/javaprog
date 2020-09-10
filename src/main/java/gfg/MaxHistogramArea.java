@@ -24,31 +24,25 @@ public class MaxHistogramArea {
     }
 
     static int findMaxArea(int[] ar) {
+        Stack<Integer> stk = new Stack<>();
         int n = ar.length;
-        Stack<Integer> stack = new Stack<Integer>();
-        int max_area = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            if (stack.isEmpty() || ar[stack.peek()] < ar[i]) stack.push(i);
+        int area = 0;
+        for(int i = 0; i < n; i++) {
+            if(stk.isEmpty()) stk.push(i);
             else {
-                do {
-                    int area;
-                    int top = stack.pop();
-                    if (stack.isEmpty()) {
-                        area = ar[top] * i;
-                    } else area = ar[top] * (i - stack.peek() - 1);
-                    max_area = Math.max(max_area, area);
-
-                } while (!stack.isEmpty() && ar[stack.peek()] > ar[i]);
-                stack.push(i);
+                while(!stk.isEmpty() && ar[i] < ar[stk.peek()]) {
+                    int idx = stk.pop();
+                    int d = stk.isEmpty() ? i : i - stk.peek() - 1;
+                    area = Math.max(area, ar[idx]*d);
+                }
+                stk.push(i);
             }
         }
-        while (!stack.isEmpty()) {
-            int top = stack.pop();
-            int area;
-            if(stack.isEmpty()) area = ar[top] * n;
-            else area = ar[top] * (n - stack.peek() - 1);
-            max_area = Math.max(max_area, area);
+        while(!stk.isEmpty()) {
+            int idx = stk.pop();
+            int d = stk.isEmpty() ? n : n - stk.peek() - 1;
+            area = Math.max(area, ar[idx]*d);
         }
-        return max_area;
+        return area;
     }
 }

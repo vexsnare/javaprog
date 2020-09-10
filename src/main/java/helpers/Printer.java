@@ -2,10 +2,12 @@ package helpers;
 
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Printer {
-
+    Queue<Integer> q = new LinkedList<>();
     public static void print(List<Integer> list) {
         for (Integer item: list) {
             System.out.print(item + " ");
@@ -14,7 +16,7 @@ public class Printer {
     }
     public static void printStr(List<String> list) {
         for (String item: list) {
-            System.out.print(item + " ");
+            System.out.print(item + ", ");
         }
         System.out.println();
     }
