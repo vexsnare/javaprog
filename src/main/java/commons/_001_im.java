@@ -23,13 +23,24 @@ public class _001_im {
     int[] d8x = {0, 0, 0, 1, 1, 1, -1, -1, -1};
     int[] d8y = {0, 1, -1, 0, 1, -1, 0, 1, -1};
     /**
-     *  (x^(-1))%mod = x^(mod-2)%mod
-     *  Where mod is a Prime (commonly given as 1e7+9)
+     * Euler's theorem
+     * (1/x)%MOD = ((1/x)^(phi of mod) - 2)%mod
+     * phi is number of co-primes with mod from [1, mod)
+     * if mod is prime (1/x)%mod = ((1/x)^mod-2)%mod
      */
-    static long inverseEuler(int n, int mod) {
-        return pow(n, mod-2, mod);
+    static int divide (int a, int b, int mod) {
+        return (int)((a%mod) * (long)(Math.pow(b, mod - 2)))%mod;
     }
-
+    /**
+     * Implement LRU using LinkedHashMap which maintains order or element
+     */
+    int capacity = 100;
+    LinkedHashMap<String, String> lm = new LinkedHashMap<String, String>(capacity, 0.75f, true) {
+            protected boolean removeEldestEntry(Map.Entry eldest)
+            {
+                return size() > capacity;
+            }
+        };
     /**
      * Initialize Map of List
      */
@@ -51,7 +62,6 @@ public class _001_im {
             return x;
         }
     }
-
     /**
      * Calculate FCD for given two numbers
      */

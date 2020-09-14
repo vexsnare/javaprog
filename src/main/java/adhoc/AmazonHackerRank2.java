@@ -9,7 +9,6 @@ import commons.TreeNode;
 
 
 
-
 public class AmazonHackerRank2 {
 
     TreeNode<Integer> root = null;
