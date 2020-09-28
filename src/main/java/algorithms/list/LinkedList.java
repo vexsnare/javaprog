@@ -1,4 +1,4 @@
-package algorithms; /**
+package algorithms.list; /**
  * Created by vinaysaini on 5/5/16.
  * Edit on 15-July-2020
  */

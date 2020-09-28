@@ -1,9 +1,7 @@
-package algorithms;
+package algorithms.graph;
 
-import commons.Graph;
 import commons.Pair;
 import commons.WeightedGraph;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Comparator;

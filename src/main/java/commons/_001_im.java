@@ -81,6 +81,7 @@ public class _001_im {
      */
     Set<Integer> list =  new HashSet<>(Arrays.asList(2,3,4));
     int[] ar = list.stream().mapToInt(Integer::intValue).toArray();
+    double[] ar3 = list.stream().mapToDouble(Integer::doubleValue).toArray();
     Integer[] ar2 = list.toArray(new Integer[0]);
     /**
      *

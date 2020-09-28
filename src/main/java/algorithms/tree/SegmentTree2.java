@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.tree;
 
 import commons.Range;
 import commons.TreeNode;

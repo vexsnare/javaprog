@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.list;
 
 import commons.DLLNode;
 import commons.TreeNode;
@@ -13,7 +13,7 @@ public class DoublyLinkedList<T> {
     int size;
     DLLNode<T> head;
     DLLNode<T> tail;
-    DoublyLinkedList() {
+    public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;

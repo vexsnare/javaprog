@@ -1,5 +1,6 @@
-package algorithms;
+package gfg;
 
+import algorithms.list.DoublyLinkedList;
 import commons.DLLNode;
 import commons.Pair;
 

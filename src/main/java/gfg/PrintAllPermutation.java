@@ -1,4 +1,4 @@
-package algorithms;
+package gfg;
 
 import java.util.HashSet;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.dp;
 
 /**
  * Created by vinaysaini on 5/31/16.
