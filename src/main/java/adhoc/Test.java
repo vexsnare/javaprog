@@ -1,7 +1,6 @@
 package adhoc;
 
 import helpers.Printer;
-import javafx.util.Pair;
 
 import java.lang.reflect.Array;
 import java.util.*;

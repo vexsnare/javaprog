@@ -1,9 +1,5 @@
 package language.threads;
 
-import sun.nio.ch.ThreadPool;
-
-import java.util.concurrent.ThreadPoolExecutor;
-
 /**
  * @author vinay.saini
  * @created 27/08/2020 - 6:56 PM
