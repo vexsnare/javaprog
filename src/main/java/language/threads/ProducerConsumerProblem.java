@@ -14,7 +14,16 @@ public class ProducerConsumerProblem {
         Producer producer = new Producer(blockingDeque);
         Consumer consumer = new Consumer(blockingDeque);
         Thread t1  = new Thread(producer);
-        Thread t2  = new Thread(consumer);
+        Thread t2  = new Thread(() -> {
+            while (true) {
+                try {
+                    blockingDeque.take();
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         executorService.execute(t1);
         executorService.execute(t2);

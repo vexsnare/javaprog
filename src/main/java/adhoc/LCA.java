@@ -9,7 +9,7 @@ import commons.TreeNode;
 
 
 
-public class AmazonHackerRank2 {
+public class LCA {
 
     TreeNode<Integer> root = null;
 
@@ -61,7 +61,7 @@ public class AmazonHackerRank2 {
     public static void main(String[] args) {
         int num = 6;
         int[] values = {5, 6, 3, 1, 2 , 4};
-        AmazonHackerRank2 exp = new AmazonHackerRank2();
+        LCA exp = new LCA();
         for (int i = 0; i < values.length; i++) {
             exp.addNode(new TreeNode<>(values[i]));
         }
