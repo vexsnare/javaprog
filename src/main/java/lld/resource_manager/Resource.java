@@ -10,7 +10,6 @@ enum ResourceType {
 public class Resource {
     ResourceType resourceType;
     String resourceId;
-
     ResourceConfig resourceConfig;
 
     public ResourceConfig getResourceConfig() {
