@@ -5,7 +5,7 @@ package algorithms.tree;
  * Edited on 14-July-2020.
  */
 
-import commons.TreeNode;
+import utils.TreeNode;
 class BinaryTree {
     TreeNode<Integer> root;
     BinaryTree(int[] preOrder, int[]inOrder ) {

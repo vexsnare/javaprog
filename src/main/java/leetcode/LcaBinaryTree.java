@@ -1,8 +1,6 @@
 package leetcode;
 
-import commons.TreeNode;
-
-import java.util.Scanner;
+import utils.TreeNode;
 
 /**
  * Created by vinaysaini on 6/2/16.

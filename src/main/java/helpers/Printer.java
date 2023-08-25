@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Queue;
 
 public class Printer {
-    Queue<Integer> q = new LinkedList<>();
     public static void print(List<Integer> list) {
         for (Integer item: list) {
             System.out.print(item + " ");

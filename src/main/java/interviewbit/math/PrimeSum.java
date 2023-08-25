@@ -1,11 +1,10 @@
 package interviewbit.math;
 
-import commons.Sieve;
+import utils.Sieve;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * @author vinay.saini

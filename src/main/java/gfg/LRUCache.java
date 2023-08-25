@@ -1,8 +1,8 @@
 package gfg;
 
 import algorithms.list.DoublyLinkedList;
-import commons.DLLNode;
-import commons.Pair;
+import utils.DLNode;
+import utils.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class LRUCache {
 
-    private Map<Integer, DLLNode<Pair<Integer, Integer>>> store;
+    private Map<Integer, DLNode<Pair<Integer, Integer>>> store;
     private DoublyLinkedList<Pair<Integer, Integer>> doublyLinkedList;
     private int capacity;
 
@@ -24,9 +24,9 @@ public class LRUCache {
     }
 
     public void set(int key, int value) {
-        DLLNode<Pair<Integer, Integer>> node =  new DLLNode<>(new Pair<>(key, value));
+        DLNode<Pair<Integer, Integer>> node =  new DLNode<>(new Pair<>(key, value));
         if (store.size() >= capacity) {
-            DLLNode<Pair<Integer, Integer>> lastUsed = doublyLinkedList.getTail();
+            DLNode<Pair<Integer, Integer>> lastUsed = doublyLinkedList.getTail();
             store.remove(lastUsed.value.first);
             doublyLinkedList.remove(lastUsed);
         }
@@ -38,7 +38,7 @@ public class LRUCache {
         if(!store.containsKey(key)) {
             return -1;
         } else {
-            DLLNode<Pair<Integer, Integer>> node  = store.get(key);
+            DLNode<Pair<Integer, Integer>> node  = store.get(key);
             doublyLinkedList.remove(node);
             doublyLinkedList.addFront(node);
             return node.value.second;

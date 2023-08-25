@@ -1,8 +1,7 @@
 package algorithms.tree;
 
-import commons.TreeNode;
+import utils.TreeNode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

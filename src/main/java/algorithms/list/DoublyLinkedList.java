@@ -1,7 +1,6 @@
 package algorithms.list;
 
-import commons.DLLNode;
-import commons.TreeNode;
+import utils.DLNode;
 import lombok.Data;
 
 /**
@@ -11,14 +10,14 @@ import lombok.Data;
 @Data
 public class DoublyLinkedList<T> {
     int size;
-    DLLNode<T> head;
-    DLLNode<T> tail;
+    DLNode<T> head;
+    DLNode<T> tail;
     public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
-    public boolean remove(DLLNode<T> node) {
+    public boolean remove(DLNode<T> node) {
         assert node != null && size != 0;
         if(size == 1) {
             this.head = node;
@@ -38,7 +37,7 @@ public class DoublyLinkedList<T> {
         size--;
         return true;
     }
-    public DLLNode<T> addFront(DLLNode<T> node) {
+    public DLNode<T> addFront(DLNode<T> node) {
         size++;
         if(head == null) {
             this.head = node;
@@ -51,12 +50,12 @@ public class DoublyLinkedList<T> {
         return node;
     }
 
-    public DLLNode<T> addFrontByValue(T value) {
-        return addFront(new DLLNode<>(value));
+    public DLNode<T> addFrontByValue(T value) {
+        return addFront(new DLNode<>(value));
     }
 
     public void display() {
-        DLLNode<T> node = this.head;
+        DLNode<T> node = this.head;
         while (node != null) {
             node.show();
             node = node.next;

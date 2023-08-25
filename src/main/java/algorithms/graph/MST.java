@@ -1,7 +1,7 @@
 package algorithms.graph;
 
-import commons.Pair;
-import commons.WeightedGraph;
+import utils.Pair;
+import utils.WeightedGraph;
 
 import java.util.ArrayList;
 import java.util.Comparator;

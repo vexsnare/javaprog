@@ -3,7 +3,7 @@ package algorithms.list; /**
  * Edit on 15-July-2020
  */
 
-import commons.LLNode;
+import utils.LNode;
 
 import java.util.List;
 
@@ -11,19 +11,19 @@ import java.util.List;
  * Singly linked list
  */
 public class LinkedList {
-    LLNode head = null;
+    LNode head = null;
 
     LinkedList(List<Integer> values) {
         for (int i = 0; i < values.size(); i++) {
-            addNodeAtStart(new LLNode(values.get(i)));
+            addNodeAtStart(new LNode(values.get(i)));
         }
     }
 
-    void addNodeAtStart(LLNode x) {
+    void addNodeAtStart(LNode x) {
         if(head == null) {
             head = x;
         } else {
-            LLNode rest = head;
+            LNode rest = head;
             x.next = rest;
             head = x;
         }
@@ -38,8 +38,8 @@ public class LinkedList {
                 isDeleted = true;
             }
             else {
-                LLNode temp = head;
-                LLNode prev = head;
+                LNode temp = head;
+                LNode prev = head;
                 temp = temp.next;
                 while (temp != null && temp.value != v) {
                     prev = temp;
@@ -55,12 +55,12 @@ public class LinkedList {
             System.out.println("No such value exist: " + v);
         }
     }
-    void addAtIndex(LLNode x, int i) {
+    void addAtIndex(LNode x, int i) {
         if (i == 0) {
             x.next = head;
             head = x;
         } else {
-            LLNode temp = head;
+            LNode temp = head;
             int index = 0;
             for (int j = 0; j < i - 1; j++) {
                 temp = temp.next;
@@ -69,28 +69,28 @@ public class LinkedList {
             temp.next = x;
         }
     }
-    LLNode reverseList(LLNode x) {
+    LNode reverseList(LNode x) {
         if(x.next==null) {
             head = x;
             return x;
         } else {
-            LLNode cur = reverseList(x.next);
+            LNode cur = reverseList(x.next);
             x.next = null;
             cur.next = x;
             return x;
         }
     }
-    void addNodeAtEnd(LLNode x) {
+    void addNodeAtEnd(LNode x) {
         if(head == null) head = x;
         else {
-            LLNode temp = head;
+            LNode temp = head;
             while(temp.next != null) temp = temp.next;
             temp.next = x;
         }
     }
 
     void display() {
-        LLNode temp = head;
+        LNode temp = head;
         while(temp != null) {
             System.out.print(temp.value + " - > ");
             temp = temp.next;

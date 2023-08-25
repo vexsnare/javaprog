@@ -1,7 +1,7 @@
 package algorithms.tree;
 
-import commons.Range;
-import commons.TreeNode;
+import utils.Range;
+import utils.TreeNode;
 
 import java.util.List;
 

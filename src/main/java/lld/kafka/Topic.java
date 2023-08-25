@@ -1,4 +1,6 @@
 package lld.kafka;
 
-public class Topic {
+public interface Topic {
+    public String getMessage() throws InterruptedException;
+    void putMessage(String message) throws InterruptedException;
 }
