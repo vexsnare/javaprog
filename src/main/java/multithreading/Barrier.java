@@ -12,15 +12,20 @@ public class Barrier {
     public synchronized void await() throws InterruptedException {
         while (count == barrierLimit) wait();
         count++;
-        released++;
-        while (count < barrierLimit) {
-            System.out.println( Thread.currentThread().getName() + " waiting..");
-            wait();
+        if(count == barrierLimit) {
+            notifyAll();
+            released = barrierLimit;
+        } else {
+            while (count < barrierLimit) {
+                System.out.println( Thread.currentThread().getName() + " waiting..");
+                wait();
+
+            }
         }
         released--;
-        notifyAll();
 
         if(released == 0) {
+            System.out.println("##");
             count = 0;
             notifyAll();
         }
