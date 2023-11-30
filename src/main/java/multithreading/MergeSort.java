@@ -1,6 +1,6 @@
 package multithreading;
 
-import helpers.Printer;
+import utils.Printer;
 
 public class MergeSort {
     public void merge(int lo, int hi, int[] input) {

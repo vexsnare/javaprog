@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import helpers.Printer;
+import utils.Printer;
 
 public class HeapSort {
     /**

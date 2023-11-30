@@ -1,5 +1,5 @@
 package algorithms.sorting;
-import helpers.Printer;
+import utils.Printer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
