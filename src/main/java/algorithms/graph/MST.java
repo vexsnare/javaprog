@@ -1,6 +1,5 @@
 package algorithms.graph;
 
-import utils.Pair;
 import utils.WeightedGraph;
 
 import java.util.ArrayList;
@@ -14,6 +13,14 @@ import java.util.PriorityQueue;
  */
 public class MST {
 
+    class Pair {
+        int first;
+        int second;
+        Pair(int x, int y) {
+            this.first = x;
+            this.second = y;
+        }
+    }
     class Edge {
         int u;
         int v;
@@ -33,7 +40,7 @@ public class MST {
         }
     });
 
-    public List<Pair<Integer, Integer>> findMst(WeightedGraph graph) {
+    public List<Pair> findMst(WeightedGraph graph) {
 
         UnionFind unionFind = new UnionFind(graph.V);
 
@@ -44,11 +51,11 @@ public class MST {
                 pq.add(new Edge(u, v, graph.weight[u][v]));
             }
         }
-        List<Pair<Integer, Integer>> ans = new ArrayList<>();
+        List<Pair> ans = new ArrayList<>();
         while (!pq.isEmpty()) {
             Edge edge = pq.poll();
             if(unionFind.find(edge.u) == unionFind.find(edge.v)) continue;
-            ans.add(new Pair<>(edge.u, edge.v));
+            ans.add(new Pair(edge.u, edge.v));
             unionFind.union(edge.u, edge.v);
         }
 

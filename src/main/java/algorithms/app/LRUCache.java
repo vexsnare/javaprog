@@ -1,8 +1,6 @@
 package algorithms.app;
 
 import algorithms.list.DoublyLinkedList;
-import utils.DLNode;
-import utils.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +11,17 @@ import java.util.Map;
  */
 public class LRUCache {
 
-    private Map<Integer, DLNode<Pair<Integer, Integer>>> store;
-    private DoublyLinkedList<Pair<Integer, Integer>> doublyLinkedList;
+    static class Pair {
+        int first;
+        int second;
+        Pair(int x, int y) {
+            this.first = x;
+            this.second = y;
+        }
+    }
+
+    private Map<Integer, DoublyLinkedList.DLNode> store;
+    private DoublyLinkedList<Pair> doublyLinkedList;
     private int capacity;
 
     LRUCache(int size) {
@@ -24,9 +31,9 @@ public class LRUCache {
     }
 
     public void set(int key, int value) {
-        DLNode<Pair<Integer, Integer>> node =  new DLNode<>(new Pair<>(key, value));
+        DoublyLinkedList.DLNode<Pair> node =  new DoublyLinkedList.DLNode<>(new Pair(key, value));
         if (store.size() >= capacity) {
-            DLNode<Pair<Integer, Integer>> lastUsed = doublyLinkedList.getTail();
+            DoublyLinkedList.DLNode<Pair> lastUsed = doublyLinkedList.getTail();
             store.remove(lastUsed.value.first);
             doublyLinkedList.remove(lastUsed);
         }
@@ -38,7 +45,7 @@ public class LRUCache {
         if(!store.containsKey(key)) {
             return -1;
         } else {
-            DLNode<Pair<Integer, Integer>> node  = store.get(key);
+            DoublyLinkedList.DLNode<Pair> node  = store.get(key);
             doublyLinkedList.remove(node);
             doublyLinkedList.addFront(node);
             return node.value.second;

@@ -1,6 +1,5 @@
 package algorithms.list;
 
-import utils.DLNode;
 import lombok.Data;
 
 /**
@@ -9,6 +8,18 @@ import lombok.Data;
  */
 @Data
 public class DoublyLinkedList<T> {
+
+    public static class DLNode<T> {
+        public DLNode<T> next;
+        public DLNode<T> prev;
+        public T value;
+        public DLNode(T value) {
+            this.value = value;
+        }
+        public void show() {
+            System.out.println(value);
+        }
+    }
     int size;
     DLNode<T> head;
     DLNode<T> tail;

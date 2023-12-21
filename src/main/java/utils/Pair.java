@@ -1,15 +1,11 @@
 package utils;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+class Pair<T1, T2> {
+    T1 first;
+    T2 second;
 
-/**
- * @author vinay.saini
- * @created 15/07/2020 - 4:47 PM
- */
-@Data
-@AllArgsConstructor
-public class Pair<T1, T2> {
-    public T1 first;
-    public T2 second;
+    Pair(T1 x, T2 y) {
+        this.first = x;
+        this.second = y;
+    }
 }
