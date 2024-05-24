@@ -9,7 +9,8 @@ import utils.TreeNode;
 
 
 
-public class LCA {
+public class
+LCA {
 
     TreeNode<Integer> root = null;
 

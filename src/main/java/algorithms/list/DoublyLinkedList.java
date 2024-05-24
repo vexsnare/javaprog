@@ -28,6 +28,10 @@ public class DoublyLinkedList<T> {
         this.tail = null;
         this.size = 0;
     }
+
+    public DLNode getTail() {
+        return this.tail;
+    }
     public boolean remove(DLNode<T> node) {
         assert node != null && size != 0;
         if(size == 1) {

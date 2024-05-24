@@ -17,6 +17,7 @@ public class BinarySearchTree {
     }
 
     public void addNode(TreeNode<Integer> node) {
+
         if(root == null) {
             root = node;
         } else {
