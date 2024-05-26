@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package psds.sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * @author vinay.saini
- * @created 25/07/2020 - 6:06 PM
+ * Topological Sort
+ * -------------------
+ * There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1.
+ * You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+ * Return the ordering of courses you should take to finish all courses.
+ * If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.
  */
 
-/**
- * Concept detect cycle in a directed acyclic graph
- * Topological sort
- */
-public class CourseScheduleII {
+// https://leetcode.com/problems/course-schedule-ii/description/
 
-
+public class CourseSchedule {
     int visited[];
     List<Integer>[] adj;
     Stack<Integer> stk;
@@ -70,3 +70,6 @@ public class CourseScheduleII {
     }
 
 }
+/**
+ *  This Concept also detects cycle in a directed acyclic graph
+ */

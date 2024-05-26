@@ -1,10 +1,11 @@
-package algorithms.graph;
+package psds.graph;
 
 /**
  * @author vinay.saini
- * @created 22/07/2020 - 6:43 AM
+ * Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
  */
 // https://leetcode.com/problems/number-of-islands/
+
 public class NumberofIsland {
 
     int dx[] = {0, 0, 1, -1};
@@ -21,7 +22,7 @@ public class NumberofIsland {
         for(int k = 0; k < 4; k++) {
             int ii = i + dx[k];
             int jj = j + dy[k];
-            if(inRange(ii, jj) && !visited[ii][jj]) {
+            if(inRange(ii, jj) && !visited[ii][jj] && grid[ii][jj] == '1') {
                 go(ii, jj, grid);
             }
         }

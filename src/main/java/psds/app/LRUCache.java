@@ -1,14 +1,19 @@
-package algorithms.app;
+package psds.app;
 
-import algorithms.list.DoublyLinkedList;
+import psds.list.DoublyLinkedList;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author vinay.saini
- * @created 15/07/2020 - 4:49 PM
+ * LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+ * int get(int key) Return the value of the key if the key exists, otherwise return -1.
+ * void put(int key, int value) Update the value of the key if the key exists.
+ * Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
  */
+// https://leetcode.com/problems/lru-cache/
+
 public class LRUCache {
 
     static class Pair {

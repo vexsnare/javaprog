@@ -1,14 +1,13 @@
-package algorithms.graph;
+package psds.graph;
 
 import java.util.*;
 
 /**
- * Created by vinaysaini on 5/3/16.
- */
-
-/**
  * Given a un-directed graph with weights find the shortest path between u & v
  */
+
+// https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/
+
 public class Dijkshtra {
     private static int n;
     private static int m;

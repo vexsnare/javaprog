@@ -1,4 +1,4 @@
-package algorithms.list;
+package psds.list;
 
 public class ReverseLinkedList {
 
@@ -24,7 +24,7 @@ public class ReverseLinkedList {
     }
 
     //iterative
-    Node reverse2(Node head) {
+    Node reverseInPlace(Node head) {
         Node first = null;
         Node second = head;
         while(second != null) {
@@ -42,7 +42,7 @@ public class ReverseLinkedList {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
        // reverseLinkedList.reverse(h);
        // Node rHead = reverseLinkedList.newHead;
-        Node rHead = reverseLinkedList.reverse2(h);
+        Node rHead = reverseLinkedList.reverseInPlace(h);
         while ( rHead != null) {
             System.out.print(rHead.value + " -> ");
             rHead = rHead.next;

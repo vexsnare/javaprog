@@ -1,4 +1,4 @@
-package algorithms.list;
+package psds.list;
 
 import lombok.Data;
 

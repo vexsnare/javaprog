@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package psds.sorting;
 
 import utils.Printer;
 

@@ -1,4 +1,4 @@
-package algorithms.graph;
+package psds.graph;
 
 import utils.WeightedGraph;
 

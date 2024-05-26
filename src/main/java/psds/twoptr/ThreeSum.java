@@ -1,4 +1,4 @@
-package algorithms.two_pointers;
+package psds.twoptr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,15 +6,16 @@ import java.util.Collections;
 
 /**
  * @author vinay.saini
- * @created 31/03/2020 - 10:35 PM
- * https://www.interviewbit.com/problems/3-sum/
- * Given an array A of N integers, find three integers in A such that the sum is closest to a given number B. Return the sum of those three integers.
  *
+ * Given an array A of N integers, find three integers in A such that the sum is closest to a given number B. Return the sum of those three integers.
  * Assume that there will only be one solution.
  * A = [-1, 2, 1, -4]
  * B = 1
  * ANS = 2
  */
+
+// https://www.interviewbit.com/problems/3-sum/
+
 public class ThreeSum {
     public int threeSumClosest(ArrayList<Integer> A, int B) {
         if(A.size() <= 2) return -1;

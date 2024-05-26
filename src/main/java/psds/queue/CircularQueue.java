@@ -1,6 +1,15 @@
-package algorithms.queue;
+package psds.queue;
 
-import java.util.Scanner;
+/**
+ *
+ * Implement a circular queue so that we can make use of the spaces in front of the queue.
+ * In a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue.
+ * But using the circular queue, we can use the space to store new value
+ *
+ **/
+
+
+// https://leetcode.com/problems/design-circular-queue/description/
 
 public class CircularQueue {
     int size;

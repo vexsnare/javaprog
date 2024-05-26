@@ -1,16 +1,13 @@
-package algorithms.graph;
-
-import java.util.*;
+package psds.graph;
 
 /**
- * @author vinay.saini
- * @created 25/07/2020 - 8:38 PM
+ * @author vinay.saini [STD]
+ * Find: It determines in which subset a particular element is in and returns the representative of that particular set.
+ * Union: It merges two different subsets, and the representative of one set becomes representative of another.
  */
 
-/*
-Union Find
-Path compression
- */
+// https://www.techiedelight.com/disjoint-set-data-structure-union-find-algorithm/
+
 public class UnionFind {
     int[] P;
     int[] R;
