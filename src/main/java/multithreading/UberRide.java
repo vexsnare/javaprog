@@ -11,8 +11,6 @@ public class UberRide {
     int republicans = 0;
     int democrats = 0;
     ReentrantLock lock = new ReentrantLock();
-    CyclicBarrier barrier = new CyclicBarrier(4);
-
     private Semaphore demsWaiting = new Semaphore(0);
     private Semaphore repubsWaiting = new Semaphore(0);
 
