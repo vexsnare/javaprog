@@ -19,12 +19,11 @@ public class MaxAbsDiff {
             if(A.get(i) + i > max1) max1 = A.get(i) + i;
             if(A.get(i) + i < min1) min1 = A.get(i) + i;
             if(A.get(i) - i > max2) max2 = A.get(i) - i;
-            if(A.get(i) - i < max2) min2 = A.get(i) - i;
+            if(A.get(i) - i < min2) min2 = A.get(i) - i;
         }
         ans = Math.max ( ans, max1 - min1 );
         ans = Math.max ( ans, max2 - min2 );
         return ans;
-
     }
                 
     public static void main(String[] args) {
