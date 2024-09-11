@@ -10,7 +10,6 @@ public class Barrier {
     }
 
     public synchronized void await() throws InterruptedException {
-        while (count == barrierLimit) wait();
         count++;
         if(count == barrierLimit) {
             notifyAll();
