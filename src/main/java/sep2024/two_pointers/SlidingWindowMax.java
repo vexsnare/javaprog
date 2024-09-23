@@ -1,4 +1,4 @@
-package sep24.two_pointers;
+package sep2024.two_pointers;
 
 import utils.Printer;
 
@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 /**
  * @see https://leetcode.com/problems/sliding-window-maximum/
  */
-//
 
 public class SlidingWindowMax {
     public List<Integer> slidingMaximum(final List<Integer> num, int K) {

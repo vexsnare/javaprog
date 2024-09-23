@@ -1,4 +1,4 @@
-package psds.twoptr;
+package sep2024.two_pointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
