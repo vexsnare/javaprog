@@ -19,7 +19,6 @@ public class BP {
 
     }
 
-
     private static String[] parseNodesConnectivity(String line) {
         int index = line.indexOf("-");
         String from = line.substring(0, index);
