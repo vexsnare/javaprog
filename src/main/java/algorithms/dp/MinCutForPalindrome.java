@@ -42,6 +42,7 @@ public class MinCutForPalindrome {
                     P[i][j] = s.charAt(i) == s.charAt(j) && P[i+1][j-1];
                 }
             }
+
         }
     }
 
