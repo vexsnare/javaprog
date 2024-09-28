@@ -16,6 +16,7 @@ class MergeSortedIntervals {
             this.j = y;
         }
     }
+
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int i = 0;
         List<Pair> result = new ArrayList<>();
