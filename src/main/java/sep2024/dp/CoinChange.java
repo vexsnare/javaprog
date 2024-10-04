@@ -1,4 +1,4 @@
-package algorithms.dp;
+package sep2024.dp;
 
 import java.util.Arrays;
 

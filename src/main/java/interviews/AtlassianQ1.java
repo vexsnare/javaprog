@@ -1,4 +1,4 @@
-package Practice;
+package interviews;
 
 import java.util.*;
 
