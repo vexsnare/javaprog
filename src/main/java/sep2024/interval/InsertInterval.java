@@ -10,32 +10,28 @@ import java.util.List;
 public class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> result = new ArrayList<>();
-        if(intervals.length <= 0) result.add(newInterval);
         int i = 0;
         while (i < intervals.length) {
-            // is overlap
-            if(intervals[i][1] < newInterval[0]) {
-                result.add(intervals[i]);
+            // new interval comes first
+            if (newInterval[1] < intervals[i][0]) {
+                break;
+            } // new interval comes later
+            else if (newInterval[0] > intervals[i][1]) {
+                result.add(new int[]{intervals[i][0], intervals[i][1]});
                 i++;
-            } else if(intervals[i][1] >= newInterval[0]) {
-                
+            } else {
+                // overlap - update new interval
+                newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
+                newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
+                i++;
             }
-//            if (intervals[i][1] < newInterval[0]) {
-//                result.add(intervals[i]);
-//                i++;
-//            } else if (intervals[i][0] > newInterval[1]) {
-//                result.add(newInterval);
-//                while (i < intervals.length) {
-//                    result.add(intervals[i]);
-//                    i++;
-//                }
-//                break;
-//            } else {
-//                newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
-//                newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
-//                i++;
-//            }
         }
+        result.add(new int[]{newInterval[0], newInterval[1]});
+        while (i < intervals.length) {
+            result.add(new int[]{intervals[i][0], intervals[i][1]});
+            i++;
+        }
+
         return result.toArray(new int[result.size()][]);
     }
 }
