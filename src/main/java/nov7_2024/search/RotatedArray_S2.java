@@ -21,7 +21,6 @@ public class RotatedArray_S2 {
         }
         return -1;
     }
-
     public static void main(String[] args) {
         System.out.println(new RotatedArray_S2().search(new int[]{5, 4}, 5));
     }
