@@ -1,0 +1,70 @@
+At the core of Notion’s product, we have a text editor that allows text editing + collaboration. Today, we will be building a system that supports some of the key user operations/edits that a user can take on a basic Notion page with text.
+
+We would like to build a TextDocument class that supports basic insertion and deletion operations of plain text with some basic undo-redo functionality.
+
+Here is the expected structure for the operations:
+
+/**
+ * To start, we'll implement two types of operations we'd like to implement:
+ * 1) InsertAtEndOperation: this will allow a user to append a string to the end
+ *    of the document.
+ * 2) DeleteFromEndOperation: this will allow a user to delete the last n chars
+ *    from the document.
+ */
+type InsertAtEndOperation = {
+    type: "insertAtEnd",
+    charsToInsert: string
+}
+
+type DeleteFromEndOperation = {
+    type: "deleteFromEnd",
+    numCharsToDelete: number
+}
+
+type Operation = InsertAtEndOperation | DeleteFromEndOperation
+Here's the structure for the TextDocument class we would like to build. We would like to implement the following 4 methods:
+
+/**
+ * Applies the given operation to the document.
+ */
+applyOperation(op: Operation): void {}
+
+/**
+ * Undoes the last operation that was applied to the document. If there
+ * is no operation to undo, then do nothing.
+ */
+undoLast(): void {}
+
+/**
+ * Redoes the last operation that was undone to the document. If there
+ * is no operation to redo, then do nothing.
+ */
+redoLast(): void {}
+
+/**
+ * Return the current content of the document as a string.
+ */
+getCurrentContent(): string {}
+Below, we also have some test cases in Typescript to demonstrate the expected behavior.
+
+const DEBUG_logCurrentContent = (doc: TextDocument) => {
+    console.log(`Current content is: ${doc.getCurrentContent()}`)
+}
+
+const doc = new TextDocument()
+DEBUG_logCurrentContent(doc) // should print ""
+
+doc.applyOperation({ type: "insertAtEnd", charsToInsert: "hello" })
+DEBUG_logCurrentContent(doc) // should print "hello"
+
+doc.applyOperation({ type: "insertAtEnd", charsToInsert: "world" })
+DEBUG_logCurrentContent(doc) // should print "helloworld"
+
+doc.applyOperation({ type: "deleteFromEnd", numCharsToDelete: 5 })
+DEBUG_logCurrentContent(doc) // should print "hello"
+
+doc.undoLast()
+DEBUG_logCurrentContent(doc) // should print "helloworld"
+
+doc.redoLast()
+DEBUG_logCurrentContent(doc) // should print "hello"

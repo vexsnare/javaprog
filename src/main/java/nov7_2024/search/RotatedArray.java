@@ -1,6 +1,4 @@
-package sep2024.search;
-
-import java.util.List;
+package nov7_2024.search;
 
 /**
  * https://leetcode.com/problems/search-in-rotated-sorted-array/description/

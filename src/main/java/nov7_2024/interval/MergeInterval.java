@@ -1,4 +1,4 @@
-package sep2024.interval;
+package nov7_2024.interval;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,7 +1,6 @@
-package sep2024.topK;
+package nov7_2024.topK;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -32,7 +31,6 @@ public class KSmallestPair {
            Touple p = heap.poll();
            result.add(List.of(nums1[p.i1], nums2[p.i2]));
            if(p.i2 < nums2.length -1) heap.add(new Touple(p.i1, ++p.i2));
-          // else if (heap.isEmpty()) heap.add(new Touple(++p.i1, 0));
         }
         return result;
     }

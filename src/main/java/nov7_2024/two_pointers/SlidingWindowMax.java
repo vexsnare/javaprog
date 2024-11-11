@@ -1,4 +1,4 @@
-package sep2024.two_pointers;
+package nov7_2024.two_pointers;
 
 import utils.Printer;
 
@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @see https://leetcode.com/problems/sliding-window-maximum/
+ * https://leetcode.com/problems/sliding-window-maximum/
  */
 
 public class SlidingWindowMax {
@@ -31,7 +31,7 @@ public class SlidingWindowMax {
             ans.add(dq.peekFirst());
             j++;
         }
-        return ans.stream().map(x -> num.get(x)).collect(Collectors.toList());
+        return ans.stream().map(num::get).collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
