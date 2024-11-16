@@ -1,0 +1,4 @@
+In DP, points to consider
+- What is important so far?
+- What value we are going to store ? what it represents ?
+- Prefer bottom up DP over top down because of overhead

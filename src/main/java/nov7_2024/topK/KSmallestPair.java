@@ -1,8 +1,10 @@
 package nov7_2024.topK;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.stream.Collectors;
 
 /**
  * https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
@@ -20,6 +22,7 @@ class Touple {
 
 public class KSmallestPair {
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        List<Integer> l1 = Arrays.stream(nums1).boxed().collect(Collectors.toList());
         PriorityQueue<Touple> heap = new PriorityQueue<>((x, y) -> {
             return nums1[x.i1] + nums2[x.i2] - nums1[y.i1] - nums2[y.i2];
         });
